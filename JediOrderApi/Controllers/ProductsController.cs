@@ -124,36 +124,6 @@ namespace JediOrderApi.Controllers
             return Ok(productResponse);
         }
 
-        #region Helper Methods
-        // Helper method to create and save image entity
-        private async Task<Images> CreateImageEntityAsync(ImageUploadRequest imageRequest, string userCreated)
-        {
-            // Initialize image entity with details from imageRequest
-            Images image = new Images
-            {
-                Id = 1,//Guid.NewGuid(),
-                FileName = imageRequest.FileName ?? imageRequest?.File?.FileName!,
-                Description = imageRequest.Description,
-                Extension = Path.GetExtension(imageRequest.File?.FileName!),
-                SizeInBytes = imageRequest.File.Length,
-                Path = Path.Combine("images", Guid.NewGuid().ToString() + Path.GetExtension(imageRequest.File.FileName)),
-                UserCreated = userCreated,
-                UserModified = userCreated,
-                IsRetired = false,
-                File = imageRequest.File,
-            };
-
-            // Save file to the specified directory
-            Directory.CreateDirectory("images"); // Ensure directory exists
-            using (var stream = new FileStream(image.Path, FileMode.Create))
-            {
-                await imageRequest.File.CopyToAsync(stream);
-            }
-
-            return image;
-        }
-        #endregion
-
         #region Validations
         private void ValidateFileUpload(ImageUploadRequest request)
         {
