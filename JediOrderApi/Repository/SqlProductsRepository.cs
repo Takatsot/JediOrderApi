@@ -109,7 +109,7 @@ namespace JediOrderApi.Repository
             existingProduct.Name = product.Name;
             existingProduct.Description = product.Description;
             existingProduct.Price = product.Price;
-            existingProduct.Image = product.Image;
+            existingProduct.ImageUrl = product.ImageUrl;
             existingProduct.Type = product.Type;
             existingProduct.DateModified = DateTime.Now;
             existingProduct.UserModified = product.UserCreated;
