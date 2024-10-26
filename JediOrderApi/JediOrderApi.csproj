@@ -1,0 +1,86 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>e9de2c85-97ca-47f0-8474-42daa6922aeb</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\Domain\Account\**" />
+    <Compile Remove="Repository\Accounts\**" />
+    <Compile Remove="Repository\DynamicRepository\**" />
+    <Content Remove="Models\Domain\Account\**" />
+    <Content Remove="Repository\Accounts\**" />
+    <Content Remove="Repository\DynamicRepository\**" />
+    <EmbeddedResource Remove="Models\Domain\Account\**" />
+    <EmbeddedResource Remove="Repository\Accounts\**" />
+    <EmbeddedResource Remove="Repository\DynamicRepository\**" />
+    <None Remove="Models\Domain\Account\**" />
+    <None Remove="Repository\Accounts\**" />
+    <None Remove="Repository\DynamicRepository\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\AccountController.cs" />
+    <Compile Remove="Controllers\WeatherForecastController.cs" />
+    <Compile Remove="Migrations\20241023144318_Initial Migration.cs" />
+    <Compile Remove="Migrations\20241023144318_Initial Migration.Designer.cs" />
+    <Compile Remove="Migrations\20241023145436_ SetPrecisionAndScaleForPrice Migration.cs" />
+    <Compile Remove="Migrations\20241023145436_ SetPrecisionAndScaleForPrice Migration.Designer.cs" />
+    <Compile Remove="Migrations\20241024133834_Seeding Data  Migration.cs" />
+    <Compile Remove="Migrations\20241024133834_Seeding Data  Migration.Designer.cs" />
+    <Compile Remove="Migrations\20241025170315_Adding Images Table.cs" />
+    <Compile Remove="Migrations\20241025170315_Adding Images Table.Designer.cs" />
+    <Compile Remove="Migrations\20241025172840_Updated Review Primary Key.cs" />
+    <Compile Remove="Migrations\20241025172840_Updated Review Primary Key.Designer.cs" />
+    <Compile Remove="Migrations\20241025173642_Updated Primary Key On Tables.cs" />
+    <Compile Remove="Migrations\20241025173642_Updated Primary Key On Tables.Designer.cs" />
+    <Compile Remove="Migrations\20241025175702_Updated product table to include image.cs" />
+    <Compile Remove="Migrations\20241025175702_Updated product table to include image.Designer.cs" />
+    <Compile Remove="Migrations\20241025181633_Updated product table removed unnececary fields.cs" />
+    <Compile Remove="Migrations\20241025181633_Updated product table removed unnececary fields.Designer.cs" />
+    <Compile Remove="Migrations\20241025193606_Updated on the migration.cs" />
+    <Compile Remove="Migrations\20241025193606_Updated on the migration.Designer.cs" />
+    <Compile Remove="Migrations\20241025193748_Updated on the migration added seeds back.cs" />
+    <Compile Remove="Migrations\20241025193748_Updated on the migration added seeds back.Designer.cs" />
+    <Compile Remove="Migrations\20241025202813_Updated tables.cs" />
+    <Compile Remove="Migrations\20241025202813_Updated tables.Designer.cs" />
+    <Compile Remove="Migrations\20241026074107_Updated image tables.cs" />
+    <Compile Remove="Migrations\20241026074107_Updated image tables.Designer.cs" />
+    <Compile Remove="Migrations\20241026090726_Updated db changes.cs" />
+    <Compile Remove="Migrations\20241026090726_Updated db changes.Designer.cs" />
+    <Compile Remove="Migrations\JediOrderDbContextModelSnapshot.cs" />
+    <Compile Remove="Models\Domain\User.cs" />
+    <Compile Remove="Repository\CustomerService.cs" />
+    <Compile Remove="Repository\ICustomerService.cs" />
+    <Compile Remove="WeatherForecast.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Services.InteractiveClient" Version="19.225.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="..\.dockerignore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+
+</Project>
